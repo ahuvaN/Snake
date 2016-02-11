@@ -1,9 +1,10 @@
+package neuhoff.snake;
 import java.util.ArrayList;
 
 
 //Controls all the game logic .. most important class in this project.
 public class ThreadsController extends Thread {
-	 ArrayList<ArrayList<DataOfSquare>> Squares= new ArrayList<ArrayList<DataOfSquare>>();
+	 ArrayList<ArrayList<SquareColors>> Squares= new ArrayList<ArrayList<SquareColors>>();
 	 Tuple headSnakePos;
 	 int sizeSnake=3;
 	 long speed = 50;
@@ -15,7 +16,7 @@ public class ThreadsController extends Thread {
 	 //Constructor of ControlleurThread 
 	 ThreadsController(Tuple positionDepart){
 		//Get all the threads
-		Squares=Window.Grid;
+		Squares=GameOfSnakeWindow.grid;
 		
 		headSnakePos=new Tuple(positionDepart.x,positionDepart.y);
 		directionSnake = 1;
@@ -24,7 +25,7 @@ public class ThreadsController extends Thread {
 		Tuple headPos = new Tuple(headSnakePos.getX(),headSnakePos.getY());
 		positions.add(headPos);
 		
-		foodPosition= new Tuple(Window.height-1,Window.width-1);
+		foodPosition= new Tuple(GameOfSnakeWindow.height-1,GameOfSnakeWindow.width-1);
 		spawnFood(foodPosition);
 
 	 }
@@ -71,7 +72,7 @@ public class ThreadsController extends Thread {
 	 
 	 //Stops The Game
 	 private void stopTheGame(){
-		 System.out.println("COLISION! \n");
+		 System.out.println("COLLISION! \n");
 		 while(true){
 			 pauser();
 		 }

@@ -1,3 +1,4 @@
+package neuhoff.snake;
 import java.awt.Color;
 import javax.swing.JPanel;
 

@@ -1,14 +1,15 @@
+package neuhoff.snake;
 import java.util.ArrayList;
 import java.awt.Color;
 
-public class DataOfSquare {
+public class SquareColors {
 
 	
 	//ArrayList that'll contain the colors
 	ArrayList<Color> C =new ArrayList<Color>();
 	int color; //2: snake , 1: food, 0:empty 
 	SquarePanel square;
-	public DataOfSquare(int col){
+	public SquareColors(int col){
 		
 		//Lets add the color to the arrayList
 		C.add(Color.darkGray);//0
